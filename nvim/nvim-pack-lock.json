@@ -1,8 +1,20 @@
 {
   "plugins": {
+    "fzf-lua": {
+      "rev": "8223eb24a7adf72c4b24e04b751486b492775414",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
     "nightfox.nvim": {
       "rev": "ba47d4b4c5ec308718641ba7402c143836f35aa9",
       "src": "https://github.com/EdenEast/nightfox.nvim.git"
+    },
+    "telescope.nvim": {
+      "rev": "506338434fec5ad19cb1f8d45bf92d66c4917393",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "tree-sitter-manager.nvim": {
+      "rev": "05bb31505873eac1883e716c2f24486bb3f7a8f3",
+      "src": "https://github.com/romus204/tree-sitter-manager.nvim"
     }
   }
 }

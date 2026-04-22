@@ -1,10 +1,5 @@
 local set = vim.opt
 
--- [ Colorscheme ]
---
-vim.cmd.colorscheme("terafox")
-
-
 -- [ Visuals ]
 --
 set.colorcolumn 	= "80"		-- Show vertical bar at line length N.
