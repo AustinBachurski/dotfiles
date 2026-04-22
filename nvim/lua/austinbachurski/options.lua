@@ -3,6 +3,7 @@ local set = vim.opt
 -- [ Visuals ]
 --
 set.colorcolumn 	= "80"		-- Show vertical bar at line length N.
+set.signcolumn      ="yes"      -- Always draw space for the warning/error indicators, avoids text hopping around.
 set.cursorline		= true		-- Highlight current line.
 set.wrap		    = false		-- Do not wrap lines.
 set.number		    = true		-- Current line number at cursor line.
