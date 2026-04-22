@@ -37,3 +37,14 @@ set.smartcase		= true		-- Case sensitive if search string contains an uppercase 
 --
 set.undofile        = true      -- Keep undo history on close, NeoVim does NOT delete these files, EVER.
 
+
+-- [ Show line numbers in netrw ]
+--
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "netrw",
+    callback = function()
+        vim.wo.number           = true
+        vim.wo.relativenumber   = true
+    end,
+})
+
