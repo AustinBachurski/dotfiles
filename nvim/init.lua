@@ -7,6 +7,7 @@ require("austinbachurski.diagnostic_options")
 
 -- [ Plugin Sources ]
 --
+local blink                 = { src = "https://github.com/saghen/blink.cmp", branch = "v1" }
 local color_scheme          = "https://github.com/EdenEast/nightfox.nvim.git"
 local fzf                   = "https://github.com/ibhagwan/fzf-lua"
 local gitsigns              = "https://github.com/lewis6991/gitsigns.nvim"
@@ -19,6 +20,7 @@ local mason_lspconfig       = "https://github.com/mason-org/mason-lspconfig.nvim
 -- [ Select Plugins ]
 --
 local pack_plugins = {
+    blink,
 	color_scheme,
     fzf,
     gitsigns,
@@ -36,6 +38,7 @@ vim.pack.add(pack_plugins)
 
 -- [ Plugin Settings ]
 --
+require("austinbachurski.plugins.blink")
 require("austinbachurski.plugins.theme")
 require("austinbachurski.plugins.fzf")
 require("austinbachurski.plugins.gitsigns")
