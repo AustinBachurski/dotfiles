@@ -4,6 +4,7 @@ local set = vim.opt
 --
 set.colorcolumn 	= "80"		-- Show vertical bar at line length N.
 set.signcolumn      ="yes"      -- Always draw space for the warning/error indicators, avoids text hopping around.
+set.winborder       = "bold"    -- Solid bold line around popup windows.
 set.cursorline		= true		-- Highlight current line.
 set.wrap		    = false		-- Do not wrap lines.
 set.number		    = true		-- Current line number at cursor line.
