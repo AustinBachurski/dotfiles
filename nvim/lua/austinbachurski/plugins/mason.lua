@@ -1,4 +1,5 @@
 require("mason").setup()
+require("austinbachurski.plugins.lsp_specific_config.clangd")
 require("austinbachurski.plugins.lsp_specific_config.lua_ls")
 
 local mason_lspconfig = require("mason-lspconfig")

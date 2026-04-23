@@ -11,7 +11,6 @@ set.number		    = true		-- Current line number at cursor line.
 set.relativenumber	= true		-- Relative line numbers.
 set.scrolloff		= 8		    -- Keep N lines at the top/bottom of the screen when scrolling.
 set.sidescrolloff	= 8		    -- Keep N lines at the left/right of the screen when scrolling.
-set.updatetime      = 250       -- Delay after stopping input for CursorHold events to trigger, i.e. LSP info.
 set.errorbells      = false     -- No beep/ding on error.
 set.visualbell      = true      -- Visual "beep" instead of audible.
 
