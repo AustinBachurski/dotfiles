@@ -5,24 +5,24 @@ vim.g.mapleader = " "
 
 -- [ General Keymaps ]
 --
-local normal_mode = 'n'
-local visual_mode = 'v'
+NORMAL_MODE = 'n'
+VISUAL_MODE = 'v'
 
 local bind = vim.keymap.set
 
-bind(normal_mode,   "<leader>ft",   vim.cmd.Ex)                 -- Open netrw.
-bind(visual_mode,   "J",            ":m '>+1<CR>gv=gvzz")       -- Move selected lines up.
-bind(visual_mode,   "K",            ":m '<-2<CR>gv=gvzz")       -- Move selected lines down.
-bind(visual_mode,   "<",            "<gv")                      -- Move selected content left.
-bind(visual_mode,   ">",            ">gv")                      -- Move selected content right.
-bind(normal_mode,   "<C-y>",        "gg\"+yG")                  -- Yank the entire buffer into the system clipboard.
-bind(visual_mode,   "<leader>d",    "\"_d")                     -- Delete highlighted text without yanking.
-bind(visual_mode,   "<leader>p",    "\"_dP")                    -- Paste over highlighted text without yanking.
-bind(normal_mode,   "n",            "nzz")                      -- Go to next search entry and center screen on said entry.
-bind(normal_mode,   "N",            "Nzz")                      -- Go to previous search entry and center screen on said entry.
-bind(normal_mode,   "<C-d>",        "<C-d>zz")                  -- Jump down and center screen.
-bind(normal_mode,   "<C-u>",        "<C-u>zz")                  -- Jump up and center screen.
-bind(normal_mode,   "<leader>/",    vim.cmd.nohl)               -- Clear highlight from searching.
+bind(NORMAL_MODE,   "<leader>ft",   vim.cmd.Ex)                 -- Open netrw.
+bind(VISUAL_MODE,   "J",            ":m '>+1<CR>gv=gvzz")       -- Move selected lines up.
+bind(VISUAL_MODE,   "K",            ":m '<-2<CR>gv=gvzz")       -- Move selected lines down.
+bind(VISUAL_MODE,   "<",            "<gv")                      -- Move selected content left.
+bind(VISUAL_MODE,   ">",            ">gv")                      -- Move selected content right.
+bind(NORMAL_MODE,   "<C-y>",        "gg\"+yG")                  -- Yank the entire buffer into the system clipboard.
+bind(VISUAL_MODE,   "<leader>d",    "\"_d")                     -- Delete highlighted text without yanking.
+bind(VISUAL_MODE,   "<leader>p",    "\"_dP")                    -- Paste over highlighted text without yanking.
+bind(NORMAL_MODE,   "n",            "nzz")                      -- Go to next search entry and center screen on said entry.
+bind(NORMAL_MODE,   "N",            "Nzz")                      -- Go to previous search entry and center screen on said entry.
+bind(NORMAL_MODE,   "<C-d>",        "<C-d>zz")                  -- Jump down and center screen.
+bind(NORMAL_MODE,   "<C-u>",        "<C-u>zz")                  -- Jump up and center screen.
+bind(NORMAL_MODE,   "<leader>/",    vim.cmd.nohl)               -- Clear highlight from searching.
 
 
 -- [ LSP Keymaps ]
@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(event)
         local lsp_keybind = function(keys, action, description)
             vim.keymap.set(
-                normal_mode,
+                NORMAL_MODE,
                 keys,
                 action,
                 { buffer = event.buf, desc = "LSP: " .. description }
