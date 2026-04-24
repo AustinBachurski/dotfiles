@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         lsp_keybind("gd",           vim.lsp.buf.definition,         "goto definition")
         lsp_keybind("gD",           vim.lsp.buf.declaration,        "goto declaration")
         lsp_keybind("K",            vim.lsp.buf.hover,              "hover documentation")
-        lsp_keybind("dn",           vim.diagnostic.open_float,      "open diagnostics")
+        lsp_keybind("gl",           vim.diagnostic.open_float,      "get diagnostics for line")
         lsp_keybind("<leader>rn",   vim.lsp.buf.rename,             "project level rename")
         lsp_keybind("<leader>ca",   vim.lsp.buf.code_action,        "code action")
     end,
