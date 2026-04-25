@@ -4,6 +4,5 @@ window-decoration = none
 window-padding-x = 2
 window-padding-y = 2
 window-padding-color = extend-always
-
-# trying to fix i3...
-gtk-titlebar = false
+font-size = 14
+confirm-close-surface = false
