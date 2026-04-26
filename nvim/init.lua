@@ -7,7 +7,7 @@ require("austinbachurski.diagnostic_options")
 
 -- [ Plugin Sources ]
 --
-local blink                 = { src = "https://github.com/saghen/blink.cmp", branch = "v1" }
+local blink                 = { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") }
 local color_scheme          = "https://github.com/EdenEast/nightfox.nvim.git"
 local fzf                   = "https://github.com/ibhagwan/fzf-lua"
 local gitsigns              = "https://github.com/lewis6991/gitsigns.nvim"
