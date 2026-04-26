@@ -15,6 +15,7 @@ local treesitter_manager    = "https://github.com/romus204/tree-sitter-manager.n
 local neovim_lspconfig      = "https://github.com/neovim/nvim-lspconfig"
 local mason                 = "https://github.com/mason-org/mason.nvim"
 local mason_lspconfig       = "https://github.com/mason-org/mason-lspconfig.nvim"
+local markdown_preview      = "https://github.com/iamcco/markdown-preview.nvim"
 
 
 -- [ Select Plugins ]
@@ -28,6 +29,7 @@ local pack_plugins = {
     neovim_lspconfig,
     mason,
     mason_lspconfig,
+    markdown_preview,
 }
 
 
