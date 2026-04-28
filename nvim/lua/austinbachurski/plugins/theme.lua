@@ -5,7 +5,8 @@ local function set_color_scheme(scheme)
     end
 end
 
-set_color_scheme("carbonfox")
+--set_color_scheme("carbonfox")
+set_color_scheme("terafox")
 
 local function set_transparecy()
     local highlight_groups = {
@@ -13,14 +14,11 @@ local function set_transparecy()
         "NormalNC",
         "EndOfBuffer",
         "NormalFloat",
-        --"FloatBorder",
         "SignColumn",
         "StatusLine",
         "StatusLineNC",
         "TabLine",
-        --"TabLineFill",  -- Pointless?
         "TabLineSel",
-        --"ColorColumn",
     }
 
     for _, group in ipairs(highlight_groups) do
@@ -31,3 +29,4 @@ local function set_transparecy()
 end
 
 set_transparecy()
+

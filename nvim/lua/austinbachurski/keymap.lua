@@ -1,6 +1,6 @@
 -- [ Leader Key ]
 --
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
 
 -- [ General Keymaps ]
