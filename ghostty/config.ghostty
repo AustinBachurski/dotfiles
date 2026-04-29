@@ -1,0 +1,7 @@
+background = #000000
+background-opacity = .7
+confirm-close-surface = false
+font-size = 14
+scrollbar = "system"
+window-decoration = none
+
