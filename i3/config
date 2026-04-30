@@ -1,0 +1,205 @@
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+
+###############################################################################
+# BASE CONFIGURATION
+###############################################################################
+
+# Set modifier key.
+set $mod Mod4
+
+# Use Mouse+$mod to drag floating windows to their wanted position.
+floating_modifier $mod
+
+# Borders and bar. - Border options = (normal|none|pixel).
+default_border pixel 1
+for_window [class="^.*"] border pixel
+hide_edge_borders smart
+font pango:JetBrains Mono 10
+
+bar {
+    colors {
+        background #222222
+            statusline #eeeeee
+            separator #666666
+#                              border  backgr. text
+            focused_workspace  #4c7899 #285577 #ffffff
+            active_workspace   #333333 #5f676a #ffffff
+            inactive_workspace #333333 #222222 #888888
+            urgent_workspace   #2f343a #900000 #ffffff
+    }
+
+    status_command i3blocks
+        position top
+        tray_output primary
+}
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Assign workspaces to displays.
+#
+# Center Display
+workspace $ws1 output DP-0
+workspace $ws2 output DP-0
+workspace $ws3 output DP-0
+workspace $ws4 output DP-0
+# Left Display
+workspace $ws5 output DP-4
+workspace $ws6 output DP-4
+workspace $ws7 output DP-4
+# Right Display
+workspace $ws8 output DP-2
+workspace $ws9 output DP-2
+workspace $ws10 output DP-2
+
+# Use pactl to adjust volume in PulseAudio.  
+set $refresh_i3status killall -SIGUSR1 i3status 
+
+
+###############################################################################
+# AUTOSTART
+###############################################################################
+
+exec_always --no-startup-id numlockx on
+exec --no-startup-id nitrogen --restore &
+exec --no-startup-id /etc/lightdm/Xsession
+exec --no-startup-id brave --password-store=basic -silent %U
+exec --no-startup-id sleep 10s && discord
+exec --no-startup-id sleep 10s && slack
+exec --no-startup-id sleep 1s && pavucontrol
+exec --no-startup-id sleep 2s && i3-msg '[class="pavucontrol"] kill' 
+exec --no-startup-id export QT_QPA_PLATFORMTHEME="qt6ct"
+
+
+###############################################################################
+# KEYBINDS
+###############################################################################
+
+# Reload the configuration file.
+bindsym $mod+Shift+q reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3).
+bindsym $mod+Ctrl+q restart
+
+# Exit i3 (logs you out of your X session).
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Switch to workspace.
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# Move focused container to workspace.
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Resize hotkeys.
+bindsym $mod+Shift++y		resize shrink width 10 px or 10ppt	
+bindsym $mod+Shift+u		resize shrink height 10 px or 10ppt
+bindsym $mod+Shift+i		resize grow height 10 px or 10ppt	
+bindsym $mod+Shift+o		resize grow width 10 px or 10ppt
+
+# Dmenu.
+bindsym $mod+Shift+Return exec --no-startup-id dmenu_run -h 24
+bindsym $mod+F12 exec --no-startup-id $HOME/.scripts/dmenu-edit-configs.sh
+
+# System.
+bindsym $mod+Mod2+Ctrl+0 exec --no-startup-id $HOME/.scripts/shutdown.sh "Shutdown?" "shutdown now" 
+bindsym $mod+Mod2+Ctrl+KP_Decimal exec --no-startup-id $HOME/.scripts/restart.sh "Restart?" "reboot" 
+bindsym $mod+F10 exec --no-startup-id urxvt -e bash -c 'cat | cat $HOME/.config/applist' 
+
+# Monitor standby.
+bindsym $mod+Ctrl+Down exec --no-startup-id sleep .5s && xset dpms force standby
+
+# Auto control.
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioRaiseVolume exec --no-startup-id playerctl position 10+
+bindsym XF86AudioLowerVolume exec --no-startup-id playerctl position 10-
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
+
+# Start a terminal.
+bindsym $mod+Return exec ghostty
+
+# Kill focused window.
+bindsym $mod+Shift+c kill
+
+# Change focus.
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move focused window.
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Split in horizontal orientation.
+bindsym $mod+i split h
+
+# Split in vertical orientation.
+bindsym $mod+m split v
+
+# Enter fullscreen mode for the focused container.
+bindsym $mod+f fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split).
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating.
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows.
+bindsym $mod+space focus mode_toggle
+
+# Focus the parent container.
+bindsym $mod+a focus parent
+
+# Application hotkeys.
+bindsym $mod+F1 exec --no-startup-id brave --password-store=basic
+bindsym $mod+F8 exec --no-startup-id pcmanfm
+bindsym $mod+KP_Add exec --no-startup-id speedcrunch & sleep .1s && transset-df -a .70
+bindsym $mod+F11 exec --no-startup-id urxvt -e sudo stacer
+bindsym $mod+Shift+s exec --no-startup-id flameshot gui  # Screenshot
+
+
+###############################################################################
+# WORKSPACE ASSIGNMENTS
+###############################################################################
+
+assign [class="brave-browser"] $ws5
+assign [class="discord"] $ws8
+assign [class="slack"] $ws8
+assign [class="pavucontrol"] $ws4
+
