@@ -72,6 +72,7 @@ set $refresh_i3status killall -SIGUSR1 i3status
 ###############################################################################
 
 exec_always --no-startup-id numlockx on
+exec_always --no-startup-id picom
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id /etc/lightdm/Xsession
 exec --no-startup-id brave --password-store=basic -silent %U
@@ -189,7 +190,7 @@ bindsym $mod+a focus parent
 # Application hotkeys.
 bindsym $mod+F1 exec --no-startup-id brave --password-store=basic
 bindsym $mod+F8 exec --no-startup-id pcmanfm
-bindsym $mod+KP_Add exec --no-startup-id speedcrunch & sleep .1s && transset-df -a .70
+bindsym $mod+KP_Add exec --no-startup-id speedcrunch
 bindsym $mod+F11 exec --no-startup-id urxvt -e sudo stacer
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui  # Screenshot
 
@@ -198,8 +199,9 @@ bindsym $mod+Shift+s exec --no-startup-id flameshot gui  # Screenshot
 # WORKSPACE ASSIGNMENTS
 ###############################################################################
 
-assign [class="brave-browser"] $ws5
+assign [class="Brave-browser"] $ws5
 assign [class="discord"] $ws8
-assign [class="slack"] $ws8
+assign [instance="discord"] $ws8
+assign [class="Slack"] $ws8
 assign [class="pavucontrol"] $ws4
 
