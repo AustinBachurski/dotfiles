@@ -17,22 +17,46 @@ for_window [class="^.*"] border pixel
 hide_edge_borders smart
 font pango:JetBrains Mono 10
 
+#I3STATUS-RUST
 bar {
+    font pango:DejaVu Sans Mono, FontAwesome 12
+    position top
+    status_command i3status-rs ~/.config/i3status-rust/config.toml
+    tray_output primary
     colors {
+        separator #666666
         background #222222
-            statusline #eeeeee
-            separator #666666
-#                              border  backgr. text
-            focused_workspace  #4c7899 #285577 #ffffff
-            active_workspace   #333333 #5f676a #ffffff
-            inactive_workspace #333333 #222222 #888888
-            urgent_workspace   #2f343a #900000 #ffffff
+        statusline #dddddd
+#                          Border   Background  Text
+        focused_workspace  #4c7899  #285577     #ffffff
+        active_workspace   #333333  #5f676a     #ffffff
+        inactive_workspace #333333  #222222     #888888
+        urgent_workspace   #2f343a  #900000     #ffffff
     }
-
-    status_command i3blocks
-        position top
-        tray_output primary
 }
+
+
+
+
+
+
+# I3BLOCKS
+#bar {
+#    colors {
+#        background #222222
+#            statusline #eeeeee
+#            separator #666666
+##                              border  backgr. text
+#            focused_workspace  #4c7899 #285577 #ffffff
+#            active_workspace   #333333 #5f676a #ffffff
+#            inactive_workspace #333333 #222222 #888888
+#            urgent_workspace   #2f343a #900000 #ffffff
+#    }
+#
+#    status_command i3blocks
+#        position top
+#        tray_output primary
+#}
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -204,4 +228,6 @@ assign [class="discord"] $ws8
 assign [instance="discord"] $ws8
 assign [class="Slack"] $ws8
 assign [class="pavucontrol"] $ws4
+
+for_window [class="zoom"] floating enable
 

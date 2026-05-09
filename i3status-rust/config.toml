@@ -1,0 +1,91 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "semi-native"
+
+[theme.overrides]
+separator = "<span color='gray' letter_spacing='-8000'> | </span>"
+
+[icons]
+icons = "awesome4"
+
+
+# System Temperature
+#
+[[block]]
+block = "temperature"
+icons_format = "<span color='#04ff00'></span>"
+format = "$icon $max"
+interval = 2
+idle = 50
+info = 70
+warning = 80
+
+
+# GPU Temperature
+#
+[[block]]
+block = "nvidia_gpu"
+icons_format = "<span color='#00c0d6'></span>"
+interval = 2
+format = " $icon $temperature"
+idle = 60
+info = 80
+warning = 90
+
+
+# Disk Space
+#
+[[block]]
+block = "disk_space"
+icons_format = "<span color='#00fbff'> </span>"
+path = "/"
+info_type = "available"
+alert_unit = "GB"
+interval = 2
+warning = 20.0
+alert = 10.0
+format = "$icon $free"
+
+
+# Memory Usage
+#
+[[block]]
+block = "memory"
+icons_format = "<span color='#0088ff'></span>"
+interval = 2
+format = "$icon$mem_used"
+
+
+# CPU Usage
+#
+[[block]]
+block = "cpu"
+icons_format = "<span color='#00ffcc'> </span>"
+format = "$icon $utilization"
+interval = 2
+
+
+# Sound
+#
+[[block]]
+block = "sound"
+format = "$icon"
+
+
+# Network
+#
+[[block]]
+block = "net"
+format = "<span color='#00ff00'>$icon</span>"
+inactive_format = "<span color='#ff0000'>! $icon !</span>"
+interval = 5
+
+
+# Datetime
+#
+[[block]]
+block = "time"
+interval = 5
+format = "$timestamp.datetime(f:'%l:%M%P %A %B %d, %Y') "
+
