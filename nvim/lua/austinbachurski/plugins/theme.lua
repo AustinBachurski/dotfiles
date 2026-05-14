@@ -29,4 +29,3 @@ local function set_transparecy()
 end
 
 set_transparecy()
-
