@@ -12,7 +12,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # Borders and bar. - Border options = (normal|none|pixel).
-default_border pixel 1
+default_border pixel 4
 for_window [class="^.*"] border pixel
 hide_edge_borders smart
 font pango:JetBrains Mono 10
