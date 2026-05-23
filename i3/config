@@ -100,7 +100,7 @@ exec_always --no-startup-id picom
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id /etc/lightdm/Xsession
 exec --no-startup-id brave --password-store=basic -silent %U
-exec --no-startup-id sleep 10s && discord
+exec --no-startup-id sleep 10s && vesktop
 exec --no-startup-id sleep 10s && slack
 exec --no-startup-id sleep 1s && pavucontrol
 exec --no-startup-id sleep 2s && i3-msg '[class="pavucontrol"] kill' 
@@ -150,9 +150,8 @@ bindsym $mod+Shift+u		resize shrink height 10 px or 10ppt
 bindsym $mod+Shift+i		resize grow height 10 px or 10ppt	
 bindsym $mod+Shift+o		resize grow width 10 px or 10ppt
 
-# Dmenu.
-bindsym $mod+Shift+Return exec --no-startup-id dmenu_run -h 24
-bindsym $mod+F12 exec --no-startup-id $HOME/.scripts/dmenu-edit-configs.sh
+# Rofi.
+bindsym $mod+Shift+Return exec --no-startup-id rofi -show drun
 
 # System.
 bindsym $mod+Mod2+Ctrl+0 exec --no-startup-id $HOME/.scripts/shutdown.sh "Shutdown?" "shutdown now" 
@@ -224,8 +223,8 @@ bindsym $mod+Shift+s exec --no-startup-id flameshot gui  # Screenshot
 ###############################################################################
 
 assign [class="Brave-browser"] $ws5
-assign [class="discord"] $ws8
-assign [instance="discord"] $ws8
+assign [class="vesktop"] $ws8
+assign [instance="vesktop"] $ws8
 assign [class="Slack"] $ws8
 assign [class="pavucontrol"] $ws4
 
