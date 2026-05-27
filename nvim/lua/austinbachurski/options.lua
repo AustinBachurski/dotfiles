@@ -18,8 +18,8 @@ set.visualbell     = true          -- Visual "beep" instead of audible.
 
 -- [ Indentation ]
 --
-set.shiftwidth  = 4    -- Level of auto indentation.
-set.softtabstop = 4    -- Tab stops every N columns, pressing tab jumps to a column instead of inserting a tab.
+set.shiftwidth  = 2    -- Level of auto indentation.
+set.softtabstop = 2    -- Tab stops every N columns, pressing tab jumps to a column instead of inserting a tab.
 set.expandtab   = true -- Use spaces instead of tabs.
 set.smartindent = true -- Automatically indent based on context.
 set.autoindent  = true -- Indent based on the current line when starting a new line.
