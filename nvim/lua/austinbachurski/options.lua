@@ -41,9 +41,9 @@ set.undofile = true -- Keep undo history on close, NeoVim does NOT delete these 
 -- [ Show line numbers in netrw ]
 --
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "netrw",
-    callback = function()
-        vim.wo.number         = true
-        vim.wo.relativenumber = true
-    end,
+  pattern = "netrw",
+  callback = function()
+    vim.wo.number         = true
+    vim.wo.relativenumber = true
+  end,
 })

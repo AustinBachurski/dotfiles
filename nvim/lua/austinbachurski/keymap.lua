@@ -28,22 +28,22 @@ bind(NORMAL_MODE, "<leader>/", vim.cmd.nohl) -- Clear highlight from searching.
 -- [ LSP Keymaps ]
 --
 vim.api.nvim_create_autocmd("LspAttach", {
-    desc = "LSP Keybinds",
-    callback = function(event)
-        local lsp_keybind = function(keys, action, description)
-            vim.keymap.set(
-                NORMAL_MODE,
-                keys,
-                action,
-                { buffer = event.buf, desc = "LSP: " .. description }
-            )
-        end
+  desc = "LSP Keybinds",
+  callback = function(event)
+    local lsp_keybind = function(keys, action, description)
+      vim.keymap.set(
+        NORMAL_MODE,
+        keys,
+        action,
+        { buffer = event.buf, desc = "LSP: " .. description }
+      )
+    end
 
-        lsp_keybind("gd", vim.lsp.buf.definition, "goto definition")
-        lsp_keybind("gD", vim.lsp.buf.declaration, "goto declaration")
-        lsp_keybind("K", vim.lsp.buf.hover, "hover documentation")
-        lsp_keybind("gl", vim.diagnostic.open_float, "get diagnostics for line")
-        lsp_keybind("<leader>rn", vim.lsp.buf.rename, "project level rename")
-        lsp_keybind("<leader>ca", vim.lsp.buf.code_action, "code action")
-    end,
+    lsp_keybind("gd", vim.lsp.buf.definition, "goto definition")
+    lsp_keybind("gD", vim.lsp.buf.declaration, "goto declaration")
+    lsp_keybind("K", vim.lsp.buf.hover, "hover documentation")
+    lsp_keybind("gl", vim.diagnostic.open_float, "get diagnostics for line")
+    lsp_keybind("<leader>rn", vim.lsp.buf.rename, "project level rename")
+    lsp_keybind("<leader>ca", vim.lsp.buf.code_action, "code action")
+  end,
 })
