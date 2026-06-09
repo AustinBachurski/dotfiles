@@ -1,6 +1,7 @@
 require("mason").setup()
 require("austinbachurski.plugins.lsp_specific_config.clangd")
 require("austinbachurski.plugins.lsp_specific_config.lua_ls")
+require("austinbachurski.plugins.lsp_specific_config.python")
 require("austinbachurski.plugins.lsp_specific_config.rust")
 
 local mason_lspconfig = require("mason-lspconfig")
@@ -19,7 +20,8 @@ mason_lspconfig.setup({
     "jsonls",        -- Json
     "lua_ls",        -- Lua
     "marksman",      -- Markdown
-    "pyright",       -- Python
+    "pyright",       -- Python LSP
+    "ruff",          -- Python Formatter/Linter
     "rust_analyzer", -- Rust
     "taplo",         -- TOML
     "tsgo",          -- TypeScript
