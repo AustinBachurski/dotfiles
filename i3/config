@@ -99,7 +99,7 @@ exec_always --no-startup-id numlockx on
 exec_always --no-startup-id picom
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id /etc/lightdm/Xsession
-exec --no-startup-id brave --password-store=basic -silent %U
+exec --no-startup-id firefox --password-store=basic -silent %U
 exec --no-startup-id sleep 10s && vesktop
 exec --no-startup-id sleep 10s && slack
 exec --no-startup-id sleep 1s && pavucontrol
@@ -211,7 +211,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Application hotkeys.
-bindsym $mod+F1 exec --no-startup-id brave --password-store=basic
+bindsym $mod+F1 exec --no-startup-id firefox --password-store=basic
 bindsym $mod+F8 exec --no-startup-id pcmanfm
 bindsym $mod+KP_Add exec --no-startup-id speedcrunch
 bindsym $mod+F11 exec --no-startup-id urxvt -e sudo stacer
@@ -222,7 +222,7 @@ bindsym $mod+Shift+s exec --no-startup-id flameshot gui  # Screenshot
 # WORKSPACE ASSIGNMENTS
 ###############################################################################
 
-assign [class="Brave-browser"] $ws5
+assign [class="firefox"] $ws5
 assign [class="vesktop"] $ws8
 assign [instance="vesktop"] $ws8
 assign [class="Slack"] $ws8
