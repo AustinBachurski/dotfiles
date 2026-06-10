@@ -169,3 +169,5 @@ configuration {
 /* me-select-entry: "MousePrimary";*/
 /* me-accept-entry: "MouseDPrimary";*/
 /* me-accept-custom: "Control+MouseDPrimary";*/
+
+@theme "/usr/share/rofi/themes/android_notification.rasi"
