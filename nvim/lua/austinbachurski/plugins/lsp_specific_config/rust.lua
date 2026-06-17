@@ -15,5 +15,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = format_group,
   callback = function()
     vim.lsp.buf.format({ async = false })
+    vim.cmd("normal! zH")
   end,
 })
