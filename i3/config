@@ -104,7 +104,6 @@ exec --no-startup-id sleep 10s && vesktop
 exec --no-startup-id sleep 10s && slack
 exec --no-startup-id sleep 1s && pavucontrol
 exec --no-startup-id sleep 2s && i3-msg '[class="pavucontrol"] kill' 
-exec --no-startup-id export QT_QPA_PLATFORMTHEME="qt6ct"
 
 
 ###############################################################################
