@@ -18,8 +18,8 @@ set.visualbell     = true          -- Visual "beep" instead of audible.
 
 -- [ Indentation ]
 --
-set.shiftwidth  = 2    -- Level of auto indentation.
-set.softtabstop = 2    -- Tab stops every N columns, pressing tab jumps to a column instead of inserting a tab.
+set.shiftwidth  = 3    -- Level of auto indentation.
+set.softtabstop = 3    -- Tab stops every N columns, pressing tab jumps to a column instead of inserting a tab.
 set.expandtab   = true -- Use spaces instead of tabs.
 set.smartindent = true -- Automatically indent based on context.
 set.autoindent  = true -- Indent based on the current line when starting a new line.
@@ -41,9 +41,9 @@ set.undofile = true -- Keep undo history on close, NeoVim does NOT delete these 
 -- [ Show line numbers in netrw ]
 --
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "netrw",
-  callback = function()
-    vim.wo.number         = true
-    vim.wo.relativenumber = true
-  end,
+   pattern = "netrw",
+   callback = function()
+      vim.wo.number         = true
+      vim.wo.relativenumber = true
+   end,
 })

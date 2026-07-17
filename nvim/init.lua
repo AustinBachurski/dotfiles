@@ -21,15 +21,15 @@ local markdown_preview   = "https://github.com/iamcco/markdown-preview.nvim"
 -- [ Select Plugins ]
 --
 local pack_plugins = {
-  blink,
-  color_scheme,
-  fzf,
-  gitsigns,
-  treesitter_manager,
-  neovim_lspconfig,
-  mason,
-  mason_lspconfig,
-  markdown_preview,
+   blink,
+   color_scheme,
+   fzf,
+   gitsigns,
+   treesitter_manager,
+   neovim_lspconfig,
+   mason,
+   mason_lspconfig,
+   markdown_preview,
 }
 
 
