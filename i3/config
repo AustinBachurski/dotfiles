@@ -223,7 +223,7 @@ bindsym $mod+Shift+s exec --no-startup-id flameshot gui  # Screenshot
 # WORKSPACE ASSIGNMENTS
 ###############################################################################
 
-assign [class="brave-browser"] $ws5
+assign [class="Brave-browser"] $ws5
 assign [class="vesktop"] $ws8
 assign [instance="vesktop"] $ws8
 assign [class="Slack"] $ws8
